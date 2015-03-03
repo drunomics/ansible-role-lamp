@@ -1,0 +1,6 @@
+---
+dependencies:
+  - { role: drunomics.base, tags: base }
+  - { role: drunomics.apache, tags: apache }
+  - { role: drunomics.php, tags: php }
+  - { role: drunomics.mysql, tags: mysql }

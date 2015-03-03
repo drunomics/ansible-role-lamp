@@ -1,0 +1,27 @@
+<VirtualHost *:80>
+  ServerAdmin {{ apache_server_admin }}
+  ServerName {{ apache_server_name }}
+  DocumentRoot {{ apache_document_root }}
+
+{% if php_xhprof_enable %}
+  alias /xhprof_html/ "/usr/share/php5-xhprof/xhprof_html/"
+{% endif %}
+
+  <Directory {{ apache_document_root }}>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+
+  {% if apache_htpasswd_file %}
+    AuthType Basic
+    AuthName "Restricted access"
+    AuthUserFile /etc/apache2/htpasswd/{{ apache_htpasswd_file }}
+    require valid-user
+
+    Order deny,allow
+    Deny from all
+    Allow from 127.0.0.1
+  {% endif %}
+
+    Satisfy any
+  </Directory>
+</VirtualHost>

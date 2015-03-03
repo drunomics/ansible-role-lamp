@@ -1,0 +1,17 @@
+# General settings
+---
+
+# apache
+apache_document_root: /var/www
+apache_server_admin: webmaster@example.com
+apache_server_name: example.com
+
+apache_htpasswd:
+ - filename: default
+   user: user
+   password: ChangeMe
+
+
+# To disable password protection just make it empty.
+phpmyadmin_htpasswd_file: default
+apache_htpasswd_file:

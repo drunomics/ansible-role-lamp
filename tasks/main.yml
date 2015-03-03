@@ -1,0 +1,24 @@
+---
+##
+# Common tasks
+#
+
+- name: Add site configuration file
+  template: >
+    src=site-ansible-default.j2 dest=/etc/apache2/sites-available/ansible-default{{ apache_site_file_suffix }} mode=644
+  notify: restart apache
+
+- name: Enable our new site
+  command: >
+    a2ensite ansible-default creates=/etc/apache2/sites-enabled/ansible-default{{ apache_site_file_suffix }}
+  notify: restart apache
+
+- name: Creating htpasswd entries
+  htpasswd: >
+    path=/etc/apache2/htpasswd/{{ item.filename }}
+    name={{ item.user }}
+    password={{ item.password }}
+    owner=root group=www-data mode=0640
+  with_items: apache_htpasswd
+
+- include: phpmyadmin.yml tags=phpmyadmin

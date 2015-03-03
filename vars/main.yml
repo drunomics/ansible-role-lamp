@@ -1,0 +1,5 @@
+---
+
+# Below variable should not be changed by inventory, thus is NOT a default.
+# As it is used by multiple roles also, it should not be a role parameter.
+php_daemon: apache2
