@@ -4,7 +4,7 @@
 #
 
 - name: PHPMyAdmin | Install required packages.
-  apt: pkg=phpmyadmin state=present
+  apt: pkg=phpmyadmin state=present update_cache=yes cache_valid_time=86400
 
 - name: PHPMyAdmin | Adding site configuration
   template: >
