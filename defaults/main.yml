@@ -2,14 +2,14 @@
 ---
 
 # apache
-apache_document_root: /var/www
+apache_document_root: /srv/default/web
 apache_server_admin: webmaster@example.com
 apache_server_name: example.com
 
 apache_htpasswd:
  - filename: default
    user: user
-   password: ChangeMe
+   password: user
 
 
 # To disable password protection just make it empty.
