@@ -15,3 +15,4 @@ apache_htpasswd:
 # To disable password protection just make it empty.
 phpmyadmin_htpasswd_file: default
 apache_htpasswd_file:
+apache_htpasswd_bypass_from: "{{ ansible_fqdn }} 127.0.0.1"

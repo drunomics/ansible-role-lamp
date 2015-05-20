@@ -20,7 +20,7 @@
     Order deny,allow
     Deny from all
     # Allow access from local IP addresses.
-    Allow from {{ ansible_all_ipv4_addresses|join(" ") }} 127.0.0.1
+    Allow from {{ apache_htpasswd_bypass_from }}
   {% endif %}
 
     Satisfy any
