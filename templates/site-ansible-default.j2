@@ -19,7 +19,8 @@
 
     Order deny,allow
     Deny from all
-    Allow from 127.0.0.1
+    # Allow access from local IP addresses.
+    Allow from {{ ansible_all_ipv4_addresses|join(" ") }} 127.0.0.1
   {% endif %}
 
     Satisfy any
