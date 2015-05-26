@@ -1,6 +1,9 @@
 # phpMyAdmin default Apache configuration
+<VirtualHost *:80>
+    ServerName devel-mysql
+    ServerAlias devel-mysql*
+    DocumentRoot /usr/share/phpmyadmin
 
-Alias /phpmyadmin /usr/share/phpmyadmin
 
 <Directory /usr/share/phpmyadmin>
 	Options FollowSymLinks
@@ -16,7 +19,7 @@ Alias /phpmyadmin /usr/share/phpmyadmin
 		php_admin_flag allow_url_fopen Off
 		php_value include_path .
 		php_admin_value upload_tmp_dir /var/lib/phpmyadmin/tmp
-		php_admin_value open_basedir /usr/share/phpmyadmin/:/etc/phpmyadmin/:/var/lib/phpmyadmin/
+		php_admin_value open_basedir /usr/share/phpmyadmin/:/etc/phpmyadmin/:/var/lib/phpmyadmin/:/usr/share/javascript
 	</IfModule>
 
 {% if phpmyadmin_htpasswd_file %}
@@ -47,3 +50,4 @@ Alias /phpmyadmin /usr/share/phpmyadmin
     Order Deny,Allow
     Deny from All
 </Directory>
+</VirtualHost>
