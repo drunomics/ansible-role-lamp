@@ -13,12 +13,22 @@
     a2ensite ansible-default creates=/etc/apache2/sites-enabled/ansible-default{{ apache_site_file_suffix }}
   notify: restart apache
 
+- name: Make sure old htpasswd file is gone
+  file: path=/etc/apache2/htpasswd/{{ item.filename }} state=absent
+  with_items:
+   - apache_htpasswd
+   - phpmyadmin_htpasswd
+   - project_htpasswd
+
 - name: Creating htpasswd entries
-  htpasswd: >
-    path=/etc/apache2/htpasswd/{{ item.filename }}
-    name={{ item.user }}
-    password={{ item.password }}
+  lineinfile: |
+    line="{{ item.user }}:{{ item.user }}"
+    dest="/etc/apache2/htpasswd/{{ item.filename }}"
     owner=root group=www-data mode=0640
-  with_items: apache_htpasswd
+  with_items:
+   - apache_htpasswd
+   - phpmyadmin_htpasswd
+   - project_htpasswd
+
 
 - include: phpmyadmin.yml tags=phpmyadmin
