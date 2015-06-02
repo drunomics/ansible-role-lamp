@@ -14,8 +14,15 @@ apache_htpasswd:
    password: "$apr1$2WckeqD6$Fwweji8hbOE6RLwCdm10e1"
 
 project_htpasswd:
- - user: me
+ - filename: default
+   user: me
    password: "$apr1$03UVm3vw$5OxA6BKBbT6QBhBDVSu.61"
+
+phpmyadmin_htpasswd:
+ - filename: phpmyadmin
+   user: user
+   password: "$apr1$2WckeqD6$Fwweji8hbOE6RLwCdm10e1"
+
 
 # To disable password protection just make it empty.
 apache_htpasswd_file:
