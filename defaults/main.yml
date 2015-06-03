@@ -6,24 +6,26 @@ apache_document_root: /srv/default/web
 apache_server_admin: webmaster@example.com
 apache_server_name: example.com
 
-user:
-
+# Default Password = user
 apache_htpasswd:
  - filename: default
    user: user
-   password: "$apr1$2WckeqD6$Fwweji8hbOE6RLwCdm10e1"
+   password: "$apr1$o0Fo.P8i$iWHLQ.V5hYJ8Xyhsxq/270"
 
-project_htpasswd:
- - filename: default
-   user: me
-   password: "$apr1$03UVm3vw$5OxA6BKBbT6QBhBDVSu.61"
-
+# Default Password = admin
 phpmyadmin_htpasswd:
  - filename: phpmyadmin
-   user: user
+   user: admin
    password: "$apr1$2WckeqD6$Fwweji8hbOE6RLwCdm10e1"
 
+# Default Password = project
+project_htpasswd:
+ - filename: default
+   user: project
+   password: "$apr1$eo7rHiw1$fgZGcImtAr7.sYrbWuzef."
 
 # To disable password protection just make it empty.
 apache_htpasswd_file:
 apache_htpasswd_bypass_from: "127.0.0.1"
+
+
