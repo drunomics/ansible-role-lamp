@@ -19,7 +19,7 @@
 		php_admin_flag allow_url_fopen Off
 		php_value include_path .
 		php_admin_value upload_tmp_dir /var/lib/phpmyadmin/tmp
-		php_admin_value open_basedir /usr/share/phpmyadmin/:/etc/phpmyadmin/:/var/lib/phpmyadmin/:/usr/share/javascript
+		php_admin_value open_basedir /usr/share/phpmyadmin/:/etc/phpmyadmin/:/var/lib/phpmyadmin/:/usr/share/javascript:/usr/share/php/php-gettext
 	</IfModule>
 {% for item in phpmyadmin_htpasswd %}
   {% if item.filename %}

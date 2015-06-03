@@ -18,8 +18,3 @@
 
 - name: PHPMyAdmin | Configuring PHPMyAdmin
   template: src=phpmyadmin-config-inc-php.j2 dest=/etc/phpmyadmin/config.inc.php mode=644
-
-- name: PHPMyAdmin | Fix wrong symlinks
-  command: |
-    rm /usr/share/phpmyadmin/libraries/php-gettext/*
-    ln /usr/share/php/php-gettext/* /usr/share/phpmyadmin/libraries/php-gettext
