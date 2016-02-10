@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:{{ apache_listen_port }}>
   ServerAdmin {{ apache_server_admin }}
   ServerName {{ apache_server_name }}
   DocumentRoot {{ apache_document_root }}

@@ -1,5 +1,5 @@
 # phpMyAdmin default Apache configuration
-<VirtualHost *:80>
+<VirtualHost *:{{ apache_listen_port }}>
     ServerName devel-mysql
     ServerAlias devel-mysql*
     DocumentRoot /usr/share/phpmyadmin
