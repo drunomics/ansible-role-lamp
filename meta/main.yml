@@ -1,6 +1,7 @@
 ---
 dependencies:
   - { role: drunomics.base, tags: [base, dependency] }
-  - { role: drunomics.apache, tags: [apache, dependency] }
+  # Do not tag apache as dependency as we need to the vars loaded by tasks.
+  - { role: drunomics.apache, tags: [apache] }
   - { role: drunomics.php, tags: [php, dependency] }
   - { role: drunomics.mysql, tags: [mysql, dependency] }
