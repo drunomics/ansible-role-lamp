@@ -2,6 +2,15 @@
 ##
 # Common tasks
 #
+- name: Add default variables per PHP version
+  include_vars: "{{ item }}"
+  with_items:
+    - "php{{ php_version }}.yml"
+
+- name: Install support for PHP.
+  apt: pkg="{{ item }}" state=present
+  with_items:
+   - "{{ lamp_mod_php_package }}"
 
 - name: Add site configuration file
   template: >
@@ -27,6 +36,4 @@
   with_items: apache_htpasswd + phpmyadmin_htpasswd + project_htpasswd
   when: item.filename is defined
 
-
-
-- include: phpmyadmin.yml tags=phpmyadmin
+- include: phpmyadmin.yml

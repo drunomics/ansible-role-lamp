@@ -24,8 +24,8 @@ project_htpasswd:
    user: project
    password: "$apr1$eo7rHiw1$fgZGcImtAr7.sYrbWuzef."
 
-# To disable password protection just make it empty.
+# The filename (without the directory path) of the htpasswd file.
+# To disable password protection just set it empty.
+#apache_htpasswd_file: default
 apache_htpasswd_file:
 apache_htpasswd_bypass_from: "127.0.0.1"
-
-

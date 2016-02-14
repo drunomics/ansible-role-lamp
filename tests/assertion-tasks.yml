@@ -1,0 +1,25 @@
+# Include for for tasks containing test assertions.
+---
+- name: Assert that a webserver is installed and listening
+  shell: >
+    netstat -tunlp | grep ":80 "
+  tags: assert
+
+- name: Ensure default docroot is created
+  file: path=/srv/default/web state=directory
+  tags: assert
+
+- name: Add simple PHP script
+  copy:
+    content: >
+      <?php
+      echo 1+1;
+    dest: /srv/default/web/index.php
+  tags: assert
+
+- name: Test webserver output
+  shell:
+    curl http://{{ ansible_default_ipv4.address }}/
+  register: result
+  failed_when: result.stdout != "2"
+  tags: assert
