@@ -37,3 +37,4 @@
   when: item.filename is defined
 
 - include: phpmyadmin.yml
+  when: lamp_phpmyadmin

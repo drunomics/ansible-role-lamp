@@ -1,4 +1,0 @@
----
-
-base_is_server: false
-base_apt_packages_extra: []

@@ -29,3 +29,7 @@ project_htpasswd:
 #apache_htpasswd_file: default
 apache_htpasswd_file:
 apache_htpasswd_bypass_from: "127.0.0.1"
+
+# Whether PHPmyadmin should be installed.
+# By default, disable it for PHP7 as the packages are incompatible.
+lamp_phpmyadmin: "{{ true if php_version < 7 else false }}"
