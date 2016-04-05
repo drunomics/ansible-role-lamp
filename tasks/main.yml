@@ -36,5 +36,5 @@
   with_items: apache_htpasswd + phpmyadmin_htpasswd + project_htpasswd
   when: item.filename is defined
 
-- include: phpmyadmin.yml
-  when: lamp_phpmyadmin
+- include: adminer.yml
+  when: lamp_adminer
