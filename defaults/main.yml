@@ -10,19 +10,19 @@ apache_server_name: example.com
 apache_htpasswd:
  - filename: default
    user: user
-   password: "$apr1$o0Fo.P8i$iWHLQ.V5hYJ8Xyhsxq/270"
+   password: "$apr1$v9CvCAag$Ow.1dk44cqh5cd87FYE6M1"
 
 # Default Password = admin
 phpmyadmin_htpasswd:
  - filename: phpmyadmin
    user: admin
-   password: "$apr1$2WckeqD6$Fwweji8hbOE6RLwCdm10e1"
+   password: "$apr1$fOAE1KZ5$q.V9IEWQ8hbndyNhvL92q0"
 
 # Default Password = project
 project_htpasswd:
  - filename: default
    user: project
-   password: "$apr1$eo7rHiw1$fgZGcImtAr7.sYrbWuzef."
+   password: "$apr1$xOTv52Od$BdcK6nL0uhQWjA.z4ShO0."
 
 # The filename (without the directory path) of the htpasswd file.
 # To disable password protection just set it empty.

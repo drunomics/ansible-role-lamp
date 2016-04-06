@@ -5,10 +5,10 @@
 
 - name: Adminer | Adding site configuration
   template: >
-    src=site-adminer.j2 dest=/etc/apache2/sites-available/adminer{{ apache_site_file_suffix }}
+    src=site-devel-mysql.j2 dest=/etc/apache2/sites-available/devel-mysql{{ apache_site_file_suffix }}
   notify: restart apache
 
 - name: Adminer | Enabling site
   command: >
-    a2ensite adminer creates=/etc/apache2/sites-enabled/adminer{{ apache_site_file_suffix }}
+    a2ensite devel-mysql creates=/etc/apache2/sites-enabled/devel-mysql{{ apache_site_file_suffix }}
   notify: restart apache
