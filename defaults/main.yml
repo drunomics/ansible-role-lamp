@@ -14,7 +14,7 @@ apache_htpasswd:
 
 # Default Password = admin
 adminer_htpasswd:
- - filename: phpmyadmin
+ - filename: adminer
    user: admin
    password: "$apr1$fOAE1KZ5$q.V9IEWQ8hbndyNhvL92q0"
 
