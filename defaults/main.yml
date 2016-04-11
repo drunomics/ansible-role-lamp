@@ -35,4 +35,4 @@ lamp_adminer: true
 
 
 # Provide backwards compatibility with old projects.
-phpmyadmin_htpasswd: "{{ adminer_htpasswd }}
+phpmyadmin_htpasswd: "{{ adminer_htpasswd }}"
