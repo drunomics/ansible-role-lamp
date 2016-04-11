@@ -13,7 +13,7 @@
 	<IfModule mod_php5.c>
 		AddType application/x-httpd-php .php
 	</IfModule>
-{% for item in phpmyadmin_htpasswd %}
+{% for item in adminer_htpasswd %}
   {% if item.filename %}
       AuthType Basic
       AuthName "Restricted access"

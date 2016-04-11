@@ -13,7 +13,7 @@ apache_htpasswd:
    password: "$apr1$v9CvCAag$Ow.1dk44cqh5cd87FYE6M1"
 
 # Default Password = admin
-phpmyadmin_htpasswd:
+adminer_htpasswd:
  - filename: phpmyadmin
    user: admin
    password: "$apr1$fOAE1KZ5$q.V9IEWQ8hbndyNhvL92q0"
@@ -32,3 +32,7 @@ apache_htpasswd_bypass_from: "127.0.0.1"
 
 # Whether PHPmyadmin should be installed.
 lamp_adminer: true
+
+
+# Provide backwards compatibility with old projects.
+phpmyadmin_htpasswd: "{{ adminer_htpasswd }}
