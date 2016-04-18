@@ -24,7 +24,7 @@
 
 - name: Make sure old htpasswd file is gone
   file: path="/etc/apache2/htpasswd/{{ item.filename }}" state=absent
-  with_items: apache_htpasswd + adminer_htpasswd + project_htpasswd
+  with_items: "{{ apache_htpasswd + adminer_htpasswd + project_htpasswd }}"
   when: item.filename is defined
 
 - name: Creating htpasswd entries
@@ -38,3 +38,4 @@
 
 - include: adminer.yml
   when: lamp_adminer
+
