@@ -26,6 +26,7 @@
   file: path="/etc/apache2/htpasswd/{{ item.filename }}" state=absent
   with_items: "{{ apache_htpasswd + adminer_htpasswd + project_htpasswd }}"
   when: item.filename is defined
+  tags: assert
 
 - name: Creating htpasswd entries
   lineinfile: |
