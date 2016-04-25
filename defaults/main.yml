@@ -30,9 +30,5 @@ project_htpasswd:
 apache_htpasswd_file:
 apache_htpasswd_bypass_from: "127.0.0.1"
 
-# Whether PHPmyadmin should be installed.
+# Whether adminer should be installed.
 lamp_adminer: true
-
-
-# Provide backwards compatibility with old projects.
-phpmyadmin_htpasswd: "{{ adminer_htpasswd }}"
