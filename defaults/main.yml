@@ -5,6 +5,7 @@
 apache_document_root: /srv/default/web
 apache_server_admin: webmaster@example.com
 apache_server_name: example.com
+apache_listen_port: 80
 
 # Default Password = user
 apache_htpasswd:
