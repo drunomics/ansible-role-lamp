@@ -1,5 +1,9 @@
 # Include for for tasks containing test assertions.
 ---
+- name: Install test prerequesites
+  apt: name=curl state=present
+  tags: assert
+
 - name: Assert that a webserver is installed and listening
   shell: >
     netstat -tunlp | grep ":80 "
