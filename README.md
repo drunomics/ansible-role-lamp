@@ -9,4 +9,4 @@ Ansible role that installs Apache, Mysql and PHP and provides basic configuratio
 
 Distribution: Ubuntu
 
-(c) 2016 drunomics GmbH. /  MIT License
+(c) 2018 drunomics GmbH. /  MIT License
