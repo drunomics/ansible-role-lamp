@@ -9,7 +9,7 @@
 
 - name: Cleanup any previous Apache PHP modules
   shell: >
-    apt-get remove --purge $(dpkg --get-selections | cut -f1 | grep libapache2-mod-php | grep -v {{ lamp_mod_php_package }})
+    apt-get remove -y --purge $(dpkg --get-selections | cut -f1 | grep libapache2-mod-php | grep -v {{ lamp_mod_php_package }})
   register: result
   changed_when: "'Removing libapache2-mod-php' in result.stdout"
 
